@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "test": "jest --config jestconfig.json",
+    "format": "onchange \"src/**/*.ts\" \"src/**/*.js\" -- prettier --write {{changed}}",
+    "lint": "tslint -p tsconfig.json"
   },
   "repository": {
     "type": "git",
@@ -16,5 +19,15 @@
   "bugs": {
     "url": "https://github.com/mgrisole/dyb_worker/issues"
   },
-  "homepage": "https://github.com/mgrisole/dyb_worker#readme"
+  "homepage": "https://github.com/mgrisole/dyb_worker#readme",
+  "devDependencies": {
+    "@types/jest": "^24.0.0",
+    "jest": "23",
+    "onchange": "^5.2.0",
+    "prettier": "^1.16.4",
+    "ts-jest": "^23.10.5",
+    "tslint": "^5.12.1",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.3.3"
+  }
 }
